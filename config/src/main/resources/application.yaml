@@ -1,0 +1,28 @@
+info:
+  version: "@project.version@"
+  component: "@project.name@"
+
+
+
+spring:
+  application:
+    name: config
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/shared
+      name: config
+  profiles:
+     active: native
+
+
+server:
+  port: 34080
+
+
+eureka:
+  client:
+    enabled: true
+    service-url:
+      defaultZone: http://localhost:30080/eureka/

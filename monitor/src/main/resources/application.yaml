@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: turbine
+  cloud:
+    config:
+      name: turbine
+      uri: http://localhost:33080 #to be changed
+      fail-fast: true
+
+info:
+  version: "@project.version@"
+  name: "@project.name@"
+
+server:
+  port: 33080
+management:
+  port: 33081
+
+
+eureka:
+  client:
+    enabled: true
+    service-url:
+      defaultZone: http://localhost:30080/eureka/
+
+turbine:
+  stream:
+    port: 33080
+
+endpoints:
+  actuator:
+    enabled: true
+
+
+
+

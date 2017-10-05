@@ -1,0 +1,39 @@
+info:
+  version: "@project.version@"
+  component: "@project.name@"
+
+
+spring:
+  application:
+    name: Circuit service
+  cloud:
+    config:
+      name: Circuit service
+      uri: http://localhost:32080 #to be changed
+      fail-fast: true
+
+
+
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+  health:
+    enabled: true
+    sensitive: true
+
+server:
+  port: 32080
+
+eureka:
+  client:
+    enabled: true
+    service-url:
+      defaultZone: http://localhost:30080/eureka/
+hystrix:
+  metrics:
+    enabled: true
+
+
+
